@@ -24,13 +24,9 @@ public class ChatBot {
         return msg.getContent().contains("hi");
     }
 
-    String getBotName() {
-        return botName;
-    }
-
     private void sendChatMessage(String content) {
         ChatMessage msg = new ChatMessage();
-        msg.setSender(getBotName());
+        msg.setSender(botName);
         msg.setType(ChatMessage.MessageType.CHAT);
         msg.setContent(content);
         chatServer.sendMessage(msg);
