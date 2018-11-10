@@ -3,24 +3,15 @@ package com.example;
 public class ChatBot {
 
     private ChatServer chatServer;
-
-    private final String botName;
+    private String botName;
 
     public ChatBot(String botName) {
-        this.botName = getBotName();
+        this.botName = botName;
     }
 
     public void join(ChatServer chatServer) {
         this.chatServer = chatServer;
         chatServer.subscribe(this);
-    }
-
-    public void onUserJoined(String user) {
-
-    }
-
-    public void onUserLeft(String user) {
-
     }
 
     public void onUserMessage(ChatMessage msg) {
@@ -33,15 +24,15 @@ public class ChatBot {
         return msg.getContent().contains("hi");
     }
 
+    String getBotName() {
+        return botName;
+    }
+
     private void sendChatMessage(String content) {
         ChatMessage msg = new ChatMessage();
-        msg.setSender(botName);
+        msg.setSender(getBotName());
         msg.setType(ChatMessage.MessageType.CHAT);
         msg.setContent(content);
         chatServer.sendMessage(msg);
-    }
-
-    String getBotName() {
-        return "Chat bt";
     }
 }

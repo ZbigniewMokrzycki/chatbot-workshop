@@ -44,10 +44,8 @@ public class ChatServer {
             @Override
             public void handleFrame(StompHeaders headers, Object payload) {
                 ChatMessage msg = (ChatMessage) payload;
-                switch (msg.getType()) {
-                    case CHAT: chatBot.onUserMessage(msg); break;
-                    case JOIN: chatBot.onUserJoined(msg.getSender()); break;
-                    case LEAVE: chatBot.onUserLeft(msg.getSender()); break;
+                if (ChatMessage.MessageType.CHAT.equals(msg.getType())) {
+                    chatBot.onUserMessage(msg);
                 }
             }
         });
