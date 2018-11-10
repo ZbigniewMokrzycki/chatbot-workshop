@@ -19,14 +19,18 @@ public class ChatBot {
 
     }
 
+    public void onUserLeft(String user) {
+
+    }
+
     public void onUserMessage(ChatMessage msg) {
-        if (msg.getContent().contains("hi")) {
+        if (isGreetingMsg(msg)) {
             sendChatMessage(String.format("Hello %s!", msg.getSender()));
         }
     }
 
-    public void onUserLeft(String user) {
-
+    boolean isGreetingMsg(ChatMessage msg) {
+        return msg.getContent().contains("hi");
     }
 
     private void sendChatMessage(String content) {
