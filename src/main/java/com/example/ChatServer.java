@@ -7,6 +7,7 @@ import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
 
 import java.lang.reflect.Type;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class ChatServer {
@@ -45,14 +46,11 @@ public class ChatServer {
             public void handleFrame(StompHeaders headers, Object payload) {
                 ChatMessage msg = (ChatMessage) payload;
                 if (ChatMessage.MessageType.CHAT.equals(msg.getType())) {
-                    chatBot.onUserMessage(msg);
+                    Optional<ChatMessage> botReply = chatBot.onUserMessage(msg);
+                    botReply.ifPresent(reply -> session.send(TOPIC, reply));
                 }
             }
         });
-    }
-
-    public void sendMessage(ChatMessage msg) {
-        session.send(TOPIC, msg);
     }
 
     public void disconnect() {

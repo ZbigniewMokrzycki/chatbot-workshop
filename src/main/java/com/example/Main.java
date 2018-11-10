@@ -28,7 +28,7 @@ public class Main {
         ChatServer chatServer = new ChatServer(stompClient);
         chatServer.connect(url);
         ChatBot chatBot = new ChatBot("Chat bot");
-        chatBot.join(chatServer);
+        chatServer.subscribe(chatBot);
 
         Thread.currentThread().join();
         chatServer.disconnect();
