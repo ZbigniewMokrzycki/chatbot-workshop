@@ -11,8 +11,9 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static final String DEFAULT_URL = "ws://localhost:8080/ws";
+//    private static final String DEFAULT_URL = "ws://localhost:8080/ws";
 //    private static final String DEFAULT_URL = "ws://b010ce78.ngrok.io/ws";
+    private static final String DEFAULT_URL = "ws://spring-ws-chat.herokuapp.com/ws";
 
     public static void main(String[] args) throws InterruptedException {
         String url = args.length > 0 ? args[0] : DEFAULT_URL;
@@ -26,7 +27,7 @@ public class Main {
 
         ChatServer chatServer = new ChatServer(stompClient);
         chatServer.connect(url);
-        ChatBot chatBot = new ChatBot();
+        ChatBot chatBot = new ChatBot("Chat bot");
         chatBot.join(chatServer);
 
         Thread.currentThread().join();

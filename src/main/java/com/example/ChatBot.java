@@ -2,9 +2,13 @@ package com.example;
 
 public class ChatBot {
 
-    private static final String BOT_NAME = "Chat Bot";
-
     private ChatServer chatServer;
+
+    private final String botName;
+
+    public ChatBot(String botName) {
+        this.botName = getBotName();
+    }
 
     public void join(ChatServer chatServer) {
         this.chatServer = chatServer;
@@ -27,9 +31,13 @@ public class ChatBot {
 
     private void sendChatMessage(String content) {
         ChatMessage msg = new ChatMessage();
-        msg.setSender(BOT_NAME);
+        msg.setSender(botName);
         msg.setType(ChatMessage.MessageType.CHAT);
         msg.setContent(content);
         chatServer.sendMessage(msg);
+    }
+
+    String getBotName() {
+        return "Chat bt";
     }
 }
