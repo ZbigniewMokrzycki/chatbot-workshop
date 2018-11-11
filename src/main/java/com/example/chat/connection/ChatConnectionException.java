@@ -1,4 +1,4 @@
-package com.example;
+package com.example.chat.connection;
 
 public class ChatConnectionException extends RuntimeException {
 

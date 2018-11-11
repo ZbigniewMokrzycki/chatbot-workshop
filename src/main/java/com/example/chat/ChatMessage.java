@@ -1,4 +1,4 @@
-package com.example;
+package com.example.chat;
 
 import java.util.Objects;
 

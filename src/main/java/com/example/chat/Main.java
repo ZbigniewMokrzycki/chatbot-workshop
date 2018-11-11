@@ -1,5 +1,6 @@
-package com.example;
+package com.example.chat;
 
+import com.example.chat.connection.ChatConnection;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
@@ -25,12 +26,10 @@ public class Main {
         WebSocketStompClient stompClient = new WebSocketStompClient(sockJsClient);
         stompClient.setMessageConverter(new MappingJackson2MessageConverter());
 
-        ChatServer chatServer = new ChatServer(stompClient);
-        chatServer.connect(url);
         ChatBot chatBot = new ChatBot("Chat bot");
-        chatServer.subscribe(chatBot);
-
+        ChatConnection chatConnection = new ChatConnection(stompClient, chatBot);
+        chatConnection.connect(url);
+        Runtime.getRuntime().addShutdownHook(new Thread(chatConnection::disconnect));
         Thread.currentThread().join();
-        chatServer.disconnect();
     }
 }
