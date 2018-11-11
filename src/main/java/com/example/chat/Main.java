@@ -12,8 +12,8 @@ import java.util.Arrays;
 
 public class Main {
 
-//    private static final String DEFAULT_URL = "ws://localhost:8080/ws";
-//    private static final String DEFAULT_URL = "ws://b010ce78.ngrok.io/ws";
+    private static final String LOCALHOST_URL = "ws://localhost:8080/ws";
+    private static final String NGROK_URL = "ws://b010ce78.ngrok.io/ws";
     private static final String DEFAULT_URL = "ws://spring-ws-chat.herokuapp.com/ws";
 
     public static void main(String[] args) throws InterruptedException {
