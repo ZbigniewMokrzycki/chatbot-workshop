@@ -2,6 +2,8 @@ package com.example.chat.connection;
 
 import com.example.chat.ChatBot;
 import com.example.chat.ChatMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
@@ -9,10 +11,11 @@ import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
 
 import java.lang.reflect.Type;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class ChatConnection {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ChatConnection.class);
 
     private static final String TOPIC = "/topic/public";
 
@@ -35,7 +38,7 @@ public class ChatConnection {
         };
         try {
             session = stompClient.connect(url, stompHandler).get(5, TimeUnit.SECONDS);
-            sendMessage(ChatMessage.MessageType.JOIN);
+            sendNotification(ChatMessage.MessageType.JOIN);
             subscribe();
         } catch (Exception e) {
             throw new ChatConnectionException(e);
@@ -52,8 +55,11 @@ public class ChatConnection {
             public void handleFrame(StompHeaders headers, Object payload) {
                 ChatMessage msg = (ChatMessage) payload;
                 if (ChatMessage.MessageType.CHAT.equals(msg.getType())) {
-                    Optional<ChatMessage> botReply = chatBot.onUserMessage(msg);
-                    botReply.ifPresent(reply -> session.send(TOPIC, reply));
+                    LOGGER.info("==> " + msg);
+                    String reply = chatBot.onUserMessage(msg);
+                    if (reply != null && !reply.equals("")) {
+                        sendChat(reply);
+                    }
                 }
             }
         });
@@ -61,15 +67,23 @@ public class ChatConnection {
 
     public synchronized void disconnect() {
         if (session != null) {
-            sendMessage(ChatMessage.MessageType.LEAVE);
+            sendNotification(ChatMessage.MessageType.LEAVE);
             session.disconnect();
         }
     }
 
-    private void sendMessage(ChatMessage.MessageType messageType) {
-        ChatMessage chatMessage = new ChatMessage();
-        chatMessage.setType(messageType);
-        chatMessage.setSender(chatBot.getBotName());
+    private void sendNotification(ChatMessage.MessageType messageType) {
+        ChatMessage chatMessage = new ChatMessage(messageType, chatBot.getBotName());
+        send(chatMessage);
+    }
+
+    private void sendChat(String content) {
+        ChatMessage chatMessage = new ChatMessage(content, chatBot.getBotName());
+        send(chatMessage);
+    }
+
+    private void send(ChatMessage chatMessage) {
+        LOGGER.info("<== " + chatMessage);
         session.send(TOPIC, chatMessage);
     }
 }

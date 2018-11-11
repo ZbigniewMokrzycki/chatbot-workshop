@@ -1,12 +1,15 @@
 package com.example.chat;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class ChatMessage {
 
-    private MessageType type;
-    private String content;
-    private String sender;
+    private final MessageType type;
+    private final String content;
+    private final String sender;
 
     public enum MessageType {
         CHAT,
@@ -14,28 +17,34 @@ public class ChatMessage {
         LEAVE
     }
 
-    public MessageType getType() {
-        return type;
+    @JsonCreator
+    public ChatMessage(
+            @JsonProperty("type") MessageType type,
+            @JsonProperty("content") String content,
+            @JsonProperty("sender") String sender) {
+        this.type = type;
+        this.content = content;
+        this.sender = sender;
     }
 
-    public void setType(MessageType type) {
-        this.type = type;
+    public ChatMessage(String content, String sender) {
+        this(MessageType.CHAT, content, sender);
+    }
+
+    public ChatMessage(MessageType type, String sender) {
+        this(type, null, sender);
+    }
+
+    public MessageType getType() {
+        return type;
     }
 
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public String getSender() {
         return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender = sender;
     }
 
     @Override
@@ -51,5 +60,11 @@ public class ChatMessage {
     @Override
     public int hashCode() {
         return Objects.hash(type, content, sender);
+    }
+
+    @Override
+    public String toString() {
+        String text = content == null ? "" : ": " + content;
+        return type + " @ " + sender + text;
     }
 }
