@@ -10,7 +10,7 @@ public class ChatBot {
 
     public String onUserMessage(ChatMessage msg) {
         if (isGreeting(msg.getContent())) {
-            return String.format("Hello %s!", msg.getSender());
+            return "Hello!";
         }
         return "";
     }

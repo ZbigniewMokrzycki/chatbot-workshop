@@ -39,13 +39,13 @@ public class ChatConnection {
         try {
             session = stompClient.connect(url, stompHandler).get(5, TimeUnit.SECONDS);
             sendNotification(ChatMessage.MessageType.JOIN);
-            subscribe();
+            subscribe(chatBot);
         } catch (Exception e) {
             throw new ChatConnectionException(e);
         }
     }
 
-    private void subscribe() {
+    private void subscribe(ChatBot chatBot) {
         session.subscribe(TOPIC, new StompFrameHandler() {
             @Override
             public Type getPayloadType(StompHeaders headers) {
@@ -73,13 +73,11 @@ public class ChatConnection {
     }
 
     private void sendNotification(ChatMessage.MessageType messageType) {
-        ChatMessage chatMessage = new ChatMessage(messageType, chatBot.getBotName());
-        send(chatMessage);
+        send(new ChatMessage(messageType, chatBot.getBotName()));
     }
 
     private void sendChat(String content) {
-        ChatMessage chatMessage = new ChatMessage(content, chatBot.getBotName());
-        send(chatMessage);
+        send(new ChatMessage(content, chatBot.getBotName()));
     }
 
     private void send(ChatMessage chatMessage) {
