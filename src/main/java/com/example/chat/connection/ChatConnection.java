@@ -26,7 +26,7 @@ public class ChatConnection {
         this.chatBot = chatBot;
     }
 
-    public void connect(String url) {
+    public synchronized void connect(String url) {
         StompSessionHandlerAdapter stompHandler = new StompSessionHandlerAdapter() {
             @Override
             public Type getPayloadType(StompHeaders headers) {
@@ -59,7 +59,7 @@ public class ChatConnection {
         });
     }
 
-    public void disconnect() {
+    public synchronized void disconnect() {
         if (session != null) {
             sendMessage(ChatMessage.MessageType.LEAVE);
             session.disconnect();
