@@ -21,22 +21,26 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 
-public class CurrencyConverter {
+public class CurrencyRates {
 
     private static final String ECB_DAILY_RATES_URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
     private static final String PLN_CODE = "PLN";
 
     private final RestTemplate template;
 
-    public CurrencyConverter(RestTemplate template) {
+    public CurrencyRates() {
+        this(new RestTemplate());
+    }
+
+    public CurrencyRates(RestTemplate template) {
         this.template = template;
     }
 
     public BigDecimal getEurPlnRate() {
-        return getRate(PLN_CODE, false);
+        return getRate(PLN_CODE);
     }
 
-    private BigDecimal getRate(String currencyCode, boolean invert) {
+    private BigDecimal getRate(String currencyCode) {
         ResponseEntity<String> wrapper = template.exchange(ECB_DAILY_RATES_URL, HttpMethod.GET, null, String.class);
 
         if(!HttpStatus.OK.equals(wrapper.getStatusCode()) || wrapper.getBody() == null) {
@@ -50,7 +54,7 @@ public class CurrencyConverter {
             throw new RuntimeException(String.format("No rate for %s avaialable.", currencyCode));
         }
 
-        return bigDecimalFromString(rates.get(0), invert);
+        return new BigDecimal(rates.get(0)).setScale(5, RoundingMode.HALF_UP);
     }
 
     private List<String> parse(String xmlData, String currencyCode) {
@@ -73,13 +77,5 @@ public class CurrencyConverter {
             throw new RuntimeException(e);
         }
         return Collections.emptyList();
-    }
-
-    private BigDecimal bigDecimalFromString(String s, boolean invert) {
-        BigDecimal rate = new BigDecimal(s).setScale(5, RoundingMode.HALF_UP);
-        if (invert) {
-            rate = BigDecimal.ONE.divide(rate, 5, RoundingMode.HALF_UP);
-        }
-        return rate;
     }
 }
