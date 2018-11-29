@@ -33,21 +33,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.glassfish.tyrus.bundles</groupId>
 			<artifactId>tyrus-standalone-client</artifactId>
-			<version>1.9</version>
+			<version>1.14</version>
 		</dependency>
 
 		<dependency>
@@ -55,12 +43,12 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.7</version>
 		</dependency>
-
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-web</artifactId>-->
-			<!--<version>2.0.0.RELEASE</version>-->
-		<!--</dependency>-->
+		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
 
 	</dependencies>
 
