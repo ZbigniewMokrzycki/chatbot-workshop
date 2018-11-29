@@ -1,7 +1,7 @@
-package com.example.chat.connection;
+package com.tdd.chat.connection;
 
-import com.example.chat.ChatBot;
-import com.example.chat.ChatMessage;
+import com.tdd.chat.ChatBot;
+import com.tdd.chat.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;

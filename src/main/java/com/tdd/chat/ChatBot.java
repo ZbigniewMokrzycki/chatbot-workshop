@@ -1,4 +1,4 @@
-package com.example.chat;
+package com.tdd.chat;
 
 public class ChatBot {
 
@@ -8,8 +8,8 @@ public class ChatBot {
         this.botName = botName;
     }
 
-    public String onUserMessage(ChatMessage msg) {
-        if (isGreeting(msg.getContent())) {
+    public String onUserMessage(ChatMessage message) {
+        if (isGreeting(message.getContent())) {
             return "Hello!";
         }
         return "";

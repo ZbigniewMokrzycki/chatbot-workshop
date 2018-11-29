@@ -1,4 +1,4 @@
-package com.example.chat.currency;
+package com.tdd.currency;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;

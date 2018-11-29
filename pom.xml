@@ -54,7 +54,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>com.example.chat.Main</mainClass>
+					<mainClass>com.tdd.chat.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

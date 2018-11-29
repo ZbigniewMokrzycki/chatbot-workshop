@@ -1,6 +1,6 @@
-package com.example.chat;
+package com.tdd.chat;
 
-import com.example.chat.connection.ChatConnection;
+import com.tdd.chat.connection.ChatConnection;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
