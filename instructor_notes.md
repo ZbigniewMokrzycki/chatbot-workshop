@@ -8,7 +8,7 @@ Junit dependency
 </dependency>
 
 ```
-Surfire plugin - required!
+Surfire plugin - required if running from maven!
 ```
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -17,6 +17,9 @@ Surfire plugin - required!
 </plugin>
 
 ```
+
+`./mvnw clean compile test`
+
 
 AssertJ
 ```
