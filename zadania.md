@@ -21,7 +21,14 @@
         "Ala ma kota" -> ["Ala", "ma", "kota"]
         ```
     * Przetestuj tę metodę. (Sprawdź czy zwrócona lista nie jest pusta, czy zawiera określone słowo, sprawdź długość listy)
-    * Co ze znakami interpunkcyjnymi?
+    * (opcjonalnie) Co ze znakami interpunkcyjnymi?
+
+4. Parametrized 
+    * Napisz klasę `SentenceShortener` z metodą `shorten(String sentence)`, która będzie skracać zdania.
+      
+      Np. `Ala ma kota -> Ala ma k2a`
+       
+      Skorzystaj z kodu napisanego do tej pory. Przetestuj przy pomocy biblioteki do testów parametryzowanych.
 
 4. Mocki: Currency Converter
     * Napisz klasę `CurrencyConverter`, z metodami `convertEurToPln(BigDecimal amount)` i `convertPlnToEur(BigDecimal amount)`, które będą zwracać przeliczone kwoty. 
