@@ -50,9 +50,11 @@
     * Zaprojektuj rozwiązanie za pomocą TDD.
     
 9. Chatbot - mockito - stub
-    * Zaprojektuj obsługę wiadomości `!convert 10 EUR to PLN`.
+    * Zaprojektuj przy pomocy TDD klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR.
     * Skorzystaj z klasy `CurrencyRates`, która dostarczy Ci kursu wymiany waluty. 
     * Jakie problemy widzisz? Jak ich uniknąć?
+    * Pomyśl o wyjątkach
+    * Dodaj obsługę wiadomości `!toEUR 10` do ChatBota.
 
 10. Chatbot - mockito - verify
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom walutowym. 
