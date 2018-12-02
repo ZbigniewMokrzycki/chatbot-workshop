@@ -36,28 +36,28 @@ public class CurrencyRates {
         this.template = template;
     }
 
-    public BigDecimal getEurPlnRate() {
+    public BigDecimal getEurPlnRate() throws CurrencyRateUnavailableException {
         return getRate(PLN_CODE);
     }
 
-    private BigDecimal getRate(String currencyCode) {
+    private BigDecimal getRate(String currencyCode) throws CurrencyRateUnavailableException {
         ResponseEntity<String> wrapper = template.exchange(ECB_DAILY_RATES_URL, HttpMethod.GET, null, String.class);
 
         if(!HttpStatus.OK.equals(wrapper.getStatusCode()) || wrapper.getBody() == null) {
-            throw new RuntimeException("Error retrieving data from external service.");
+            throw new CurrencyRateUnavailableException("Error retrieving data from external service.");
         }
 
         String response = wrapper.getBody();
 
         List<String> rates = parse(response, currencyCode);
         if(rates.isEmpty()) {
-            throw new RuntimeException(String.format("No rate for %s avaialable.", currencyCode));
+            throw new CurrencyRateUnavailableException(String.format("No rate for %s avaialable.", currencyCode));
         }
 
         return new BigDecimal(rates.get(0)).setScale(5, RoundingMode.HALF_UP);
     }
 
-    private List<String> parse(String xmlData, String currencyCode) {
+    private List<String> parse(String xmlData, String currencyCode) throws CurrencyRateUnavailableException {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -74,7 +74,7 @@ public class CurrencyRates {
                 }
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            throw new RuntimeException(e);
+            throw new CurrencyRateUnavailableException(e);
         }
         return Collections.emptyList();
     }
