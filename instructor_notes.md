@@ -40,6 +40,15 @@ JUnit @ParameterizedTest
     <scope>test</scope>
 </dependency>
 ```
+
+```
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>2.23.4</version>
+    <scope>test</scope>
+</dependency>
+```
                                             
 1. Exceptions 
     * `@Test(expected = IllegalArgumentException.class)`

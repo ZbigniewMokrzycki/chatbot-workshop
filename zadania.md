@@ -49,12 +49,12 @@
     * Dodaj metodę do ChatBota, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
     * Zaprojektuj rozwiązanie za pomocą TDD.
     
-9. Chatbot - mocki
+9. Chatbot - mockito - stub
     * Zaprojektuj obsługę wiadomości `!convert 10 EUR to PLN`.
     * Skorzystaj z klasy `CurrencyRates`, która dostarczy Ci kursu wymiany waluty. 
     * Jakie problemy widzisz? Jak ich uniknąć?
 
-10. Chatbot - mocki #2 
+10. Chatbot - mockito - verify
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom walutowym. 
     Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę powyżej 50.000 PLN, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
