@@ -69,6 +69,15 @@ JUnit @ParameterizedTest
 3. Parametrized
     * opowiedzieć, że są różne biblioteki eg. JUnitParams
 
+
+4. Chatbot
+In case chatbot server needed:
+```
+https://github.com/callicoder/spring-boot-websocket-chat-demo.git
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+./mvnw spring-boot:run
+```
+
 Demo stuff on Calculator example.
 
 Basic: plus, minus

@@ -2,21 +2,21 @@ package com.tdd.chat;
 
 public class ChatBot {
 
-    private String botName;
-
-    public ChatBot(String botName) {
-        this.botName = botName;
-    }
+    private final String botName = "ChatBot";
 
     public String onUserMessage(ChatMessage message) {
         if (isGreeting(message.getContent())) {
-            return "Hello!";
+            return sayHello();
         }
         return "";
     }
 
     boolean isGreeting(String messageContent) {
         return messageContent.contains("hi");
+    }
+
+    String sayHello() {
+        return "Hello!";
     }
 
     public String getBotName() {

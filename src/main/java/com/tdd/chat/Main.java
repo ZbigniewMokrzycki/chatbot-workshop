@@ -21,7 +21,7 @@ public class Main {
         WebSocketStompClient stompClient = new WebSocketStompClient(sockJsClient);
         stompClient.setMessageConverter(new MappingJackson2MessageConverter());
 
-        ChatBot chatBot = new ChatBot("Chat bot");
+        ChatBot chatBot = new ChatBot();
         ChatConnection chatConnection = new ChatConnection(stompClient, chatBot);
         chatConnection.connect(url);
         Runtime.getRuntime().addShutdownHook(new Thread(chatConnection::disconnect));

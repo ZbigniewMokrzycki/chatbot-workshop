@@ -30,8 +30,26 @@
        
       Skorzystaj z kodu napisanego do tej pory. Przetestuj przy pomocy biblioteki do testów parametryzowanych.
 
-4. Mocki: Currency Converter
-    * Napisz klasę `CurrencyConverter`, z metodami `convertEurToPln(BigDecimal amount)` i `convertPlnToEur(BigDecimal amount)`, które będą zwracać przeliczone kwoty. 
-      Skorzystaj z klasy `CurrencyRates` która dostarczy Ci kursu wymiany waluty. 
-    * Przetestuj swoją klasę `CurrencyConverter`.
+5. Chatbot - rozgrzewka
+    * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
+    * Uruchom `com.tdd.chat.Main`
+    * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
+
+6. Chatbot - raport o błędzie 
+    * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
+    * Zweryfikuj doniesienia użytkownika.
+    * Zaproponuj rozwiązanie błędu.
+    
+7. (opcjonalne) Chatbot - Shortener
+    * Dodaj obsługę wiadomości `!shorten [zdanie]`. 
+    * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
+    * Np. na wiadomość: `!shorten Ala ma kota` odpowie: `Ala ma k2a`
+    
+8. Chatbot - TDD 
+    * Dodaj metodę do ChatBota, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
+    * Zaprojektuj rozwiązanie za pomocą TDD.
+    
+9. Chatbot - mocki
+    * Zaprojektuj obsługę wiadomości `!convert 10 EUR to PLN`.
+    * Skorzystaj z klasy `CurrencyRates`, która dostarczy Ci kursu wymiany waluty. 
     * Jakie problemy widzisz? Jak ich uniknąć?
