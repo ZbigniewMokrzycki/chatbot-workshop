@@ -15,7 +15,7 @@
     * Zaproponuj rozwiązanie.
     * Jak sprawdzić czy nasza zmiana jest poprawnie przetestowana?
   
-3. Matchery: Word Splitter
+4. AssertJ: Word Splitter
     * Napisz klasę `WordSplitter` z metodą `split(String sentence)`, która dla przekazanego w parametrze zdania zwróci listę słów. Np.
         ```
         "Ala ma kota" -> ["Ala", "ma", "kota"]
@@ -23,40 +23,40 @@
     * Przetestuj tę metodę. (Sprawdź czy zwrócona lista nie jest pusta, czy zawiera określone słowo, sprawdź długość listy)
     * (opcjonalnie) Co ze znakami interpunkcyjnymi?
 
-4. Parametrized 
+5. Testy parametryzowane 
     * Napisz klasę `SentenceShortener` z metodą `shorten(String sentence)`, która będzie skracać zdania.
       
       Np. `Ala ma kota -> Ala ma k2a`
        
       Skorzystaj z kodu napisanego do tej pory. Przetestuj przy pomocy biblioteki do testów parametryzowanych.
 
-5. Chatbot - rozgrzewka
+6. Chatbot - rozgrzewka
     * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
     * Uruchom `com.tdd.chat.Main`
     * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
 
-6. Chatbot - raport o błędzie 
+7. Chatbot - raport o błędzie 
     * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
     * Zweryfikuj doniesienia użytkownika.
     * Zaproponuj rozwiązanie błędu.
     
-7. (opcjonalne) Chatbot - Shortener
+8. (opcjonalne) Chatbot - Shortener
     * Dodaj obsługę wiadomości `!shorten [zdanie]`. 
     * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
     * Np. na wiadomość: `!shorten Ala ma kota` odpowie: `Ala ma k2a`
     
-8. Chatbot - TDD 
+9. Chatbot - TDD 
     * Dodaj metodę do ChatBota, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
     * Zaprojektuj rozwiązanie za pomocą TDD.
     
-9. Chatbot - mockito - stub
+10. Chatbot - Mockito - mockowanie odpowiedzi
     * Zaprojektuj przy pomocy TDD klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR.
     * Skorzystaj z klasy `CurrencyRates`, która dostarczy Ci kursu wymiany waluty. 
     * Jakie problemy widzisz? Jak ich uniknąć?
     * Pomyśl o wyjątkach
     * Dodaj obsługę wiadomości `!toEUR 10` do ChatBota.
 
-10. Chatbot - mockito - verify
+11. Chatbot - Mockito - weryfikacja wywołań
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom walutowym. 
-    Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę powyżej 50.000 PLN, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
+    Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę co najmniej 50.000 PLN, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
