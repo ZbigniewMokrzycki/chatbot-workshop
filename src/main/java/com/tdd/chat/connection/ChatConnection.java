@@ -1,6 +1,6 @@
 package com.tdd.chat.connection;
 
-import com.tdd.chat.ChatBot;
+import com.tdd.chat.bot.ChatBot;
 import com.tdd.chat.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

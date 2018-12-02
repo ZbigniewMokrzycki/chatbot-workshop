@@ -1,5 +1,6 @@
 package com.tdd.chat;
 
+import com.tdd.chat.bot.ChatBot;
 import com.tdd.chat.connection.ChatConnection;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
