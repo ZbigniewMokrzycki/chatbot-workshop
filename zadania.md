@@ -56,5 +56,5 @@
 
 10. Chatbot - mocki #2 
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom walutowym. 
-    Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę powyżej 10.000 EUR, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
+    Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę powyżej 50.000 PLN, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
