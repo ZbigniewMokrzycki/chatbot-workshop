@@ -2,19 +2,21 @@ package pl.gov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.math.BigDecimal;
+import java.util.Random;
 
 public class HttpTaxOfficeApi implements TaxOfficeApi {
 
     private final Logger logger = LoggerFactory.getLogger(HttpTaxOfficeApi.class);
+    private final Random random = new Random();
 
-    enum SuspiciousActivityType {
-        TAX_AVOIDANCE, THOUGHT_CRIME, LARGE_AMOUNT_MONEY_CONVERSION, OTHER
-    }
-
-    void notifySuspiciousActivity(SuspiciousActivityType type, String violator, BigDecimal violationAmountPln) {
+    public void notifySuspiciousActivity(SuspiciousActivityType type, String violator, BigDecimal violationAmountPln) {
         logger.info("Recorded a violation of " + type + " by " + violator + ": " + violationAmountPln);
-        //TODO oglosic przetarg na dostawce implementacji
+        if (random.nextInt() % 2 == 0) {
+            return;
+        }
+        throw new NotImplementedException(); //TODO oglosic przetarg na dostawce implementacji
     }
 }
