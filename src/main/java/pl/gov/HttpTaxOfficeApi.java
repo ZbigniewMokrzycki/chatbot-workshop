@@ -2,7 +2,6 @@ package pl.gov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.math.BigDecimal;
 import java.util.Random;
@@ -17,6 +16,6 @@ public class HttpTaxOfficeApi implements TaxOfficeApi {
         if (random.nextInt() % 2 == 0) {
             return;
         }
-        throw new NotImplementedException(); //TODO oglosic przetarg na dostawce implementacji
+        throw new TaxOfficeApiException("Not implemented!"); //TODO oglosic przetarg na dostawce implementacji
     }
 }
