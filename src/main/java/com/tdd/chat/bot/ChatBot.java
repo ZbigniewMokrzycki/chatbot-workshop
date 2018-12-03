@@ -9,7 +9,7 @@ public class ChatBot {
 
     private final String botName = "ChatBot";
 
-    private final List<AutoReply> autoReplies = Arrays.asList(new Greeting());
+    private final List<AutoReply> autoReplies = Arrays.asList(new GreetingReply());
 
     public String onUserMessage(ChatMessage message) {
         for (AutoReply autoReply : autoReplies) {

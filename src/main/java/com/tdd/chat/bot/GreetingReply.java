@@ -2,7 +2,7 @@ package com.tdd.chat.bot;
 
 import com.tdd.chat.ChatMessage;
 
-public class Greeting implements AutoReply {
+public class GreetingReply implements AutoReply {
 
     @Override
     public boolean canReply(ChatMessage chatMessage) {
