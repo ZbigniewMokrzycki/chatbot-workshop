@@ -17,8 +17,11 @@ public class DevMain {
                 String msg = line.substring(i + 2);
                 String botMessage = chatBot.onUserMessage(new ChatMessage(msg, name));
                 if (!botMessage.equals("")) {
-                    System.out.println(chatBot.getBotName() + ":" + botMessage);
+                    System.out.printf("%s: %s%n", chatBot.getBotName(), botMessage);
                 }
+            } else {
+                System.out.println("Input ignored. Correct format is:");
+                System.out.println("username: message");
             }
         }
     }
