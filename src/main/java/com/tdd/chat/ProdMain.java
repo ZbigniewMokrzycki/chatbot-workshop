@@ -9,7 +9,7 @@ import org.springframework.web.socket.sockjs.client.SockJsClient;
 
 import java.util.Collections;
 
-public class Main {
+public class ProdMain {
 
     private static final String LOCALHOST_URL = "ws://localhost:8080/ws";
     private static final String NGROK_URL = "ws://b010ce78.ngrok.io/ws";

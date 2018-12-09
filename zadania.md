@@ -30,16 +30,16 @@
        
       Skorzystaj z kodu napisanego do tej pory. Przetestuj przy pomocy biblioteki do testów parametryzowanych.
 
-6. Chatbot - rozgrzewka
-    * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
-    * Uruchom `com.tdd.chat.Main`
-    * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
-
-7. Chatbot - raport o błędzie 
+6. Chatbot - raport o błędzie 
     * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
     * Zweryfikuj doniesienia użytkownika.
     * Zaproponuj rozwiązanie błędu.
     
+7. Chatbot - rozgrzewka
+    * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
+    * Uruchom `com.tdd.chat.ProdMain`
+    * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
+
 8. (opcjonalne) Chatbot - Shortener
     * Dodaj obsługę wiadomości `!shorten [zdanie]`. 
     * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
