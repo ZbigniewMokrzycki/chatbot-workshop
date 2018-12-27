@@ -80,6 +80,8 @@ JUnit @ParameterizedTest
 
 
 4. Chatbot
+Running 
+`./mvnw exec:java`
 In case chatbot server needed:
 ```
 https://github.com/callicoder/spring-boot-websocket-chat-demo.git
