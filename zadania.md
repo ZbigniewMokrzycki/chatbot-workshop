@@ -45,8 +45,8 @@
     * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
     * Np. na wiadomość: `!shorten Ala ma kota` odpowie: `Ala ma k2a`
     
-9. Chatbot - TDD 
-    * Dodaj metodę do ChatBota, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
+9. Chatbot - gaduła (TDD ping-pong)
+    * Dodaj do ChatBota metodę, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
     * Zaprojektuj rozwiązanie za pomocą TDD.
     
 10. Chatbot - Mockito - mockowanie odpowiedzi
@@ -60,3 +60,11 @@
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom walutowym. 
     Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę co najmniej 50.000 PLN, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
+    
+12. (opcjonalnie) Chatbot - Alledrogo (TDD)
+    * Na komendę `!auction start [przedmiot]` Chatbot powinien wylosować cenę z przedziału 0-100zł. 
+    * Następnie Chatbot licytuje przedmiot wysyłając `!auction bid [cena]`
+    * Aukcja kończy się gdy zostanie odebrany komunikat `!auction stop`
+    * Bonus 1: Twój bot powinien wysłać `!auction I won` gdy uzna, że wygrał
+    * Bonus 2: Bot wstrzymuje się od licytacji z prawdopodobieństwem 0.5
+    
