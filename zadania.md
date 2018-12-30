@@ -40,7 +40,7 @@
     * Zweryfikuj doniesienia użytkownika.
     * Zaproponuj rozwiązanie błędu.
     
-8. (opcjonalne) Chatbot - Shortener
+8. Chatbot - Shortener
     * Dodaj obsługę wiadomości `!shorten [zdanie]`. 
     * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
     * Np. na wiadomość: `!shorten Ala ma kota` odpowie: `Ala ma k2a`
@@ -49,24 +49,25 @@
     * Dodaj do ChatBota metodę, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
     * Zaprojektuj rozwiązanie za pomocą TDD.
     
-10. Chatbot - Mockito - mockowanie odpowiedzi
+10. Chatbot (Mockito - mockowanie odpowiedzi)
+    * Na komendę `!auction start [przedmiot]` Chatbot powinien wylosować cenę z przedziału 0-1000zł. 
+    * Następnie Chatbot licytuje przedmiot odpowiadając `!auction bid [cena]`
+    * Aukcja kończy się gdy zostanie odebrany komunikat `!auction stop`
+    * Bonus 1: Twój bot powinien wysłać `!auction I won` gdy uzna, że wygrał
+    * Bonus 2: Bot wstrzymuje się od licytacji z prawdopodobieństwem 0.5
+    
+11. Chatbot - Mockito - weryfikacja wywołań
+    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. 
+    Z ustawy wynika, że za każdym razem gdy ktoś licytuje za kwotę 500 PLN lub więcej, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
+    * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
+    
+12. (opcjonalnie) Chatbot - Mockito - mockowanie odpowiedzi
     * Zaprojektuj przy pomocy TDD klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR.
     * Skorzystaj z klasy `CurrencyRates`, która dostarczy Ci kursu wymiany waluty. 
     * Jakie problemy widzisz? Jak ich uniknąć?
     * Pomyśl o wyjątkach
     * Dodaj obsługę wiadomości `!toEUR 10` do ChatBota.
-
-11. Chatbot - Mockito - weryfikacja wywołań
-    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom walutowym. 
-    Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę co najmniej 50.000 PLN, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
-    * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
-    
-12. (opcjonalnie) Chatbot - Alledrogo (TDD)
-    * Na komendę `!auction start [przedmiot]` Chatbot powinien wylosować cenę z przedziału 0-100zł. 
-    * Następnie Chatbot licytuje przedmiot wysyłając `!auction bid [cena]`
-    * Aukcja kończy się gdy zostanie odebrany komunikat `!auction stop`
-    * Bonus 1: Twój bot powinien wysłać `!auction I won` gdy uzna, że wygrał
-    * Bonus 2: Bot wstrzymuje się od licytacji z prawdopodobieństwem 0.5
+    * Pamiętaj o ustawie (zadanie 11)!
     
 13. Testy parametryzowane 
     * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
