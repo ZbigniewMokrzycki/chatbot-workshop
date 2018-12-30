@@ -23,23 +23,23 @@
     * Przetestuj tę metodę. (Sprawdź czy zwrócona lista nie jest pusta, czy zawiera określone słowo, sprawdź długość listy)
     * (opcjonalnie) Co ze znakami interpunkcyjnymi?
 
-5. Testy parametryzowane 
+5. AssertJ: SentenceShortener
     * Napisz klasę `SentenceShortener` z metodą `shorten(String sentence)`, która będzie skracać zdania.
       
       Np. `Ala ma kota -> Ala ma k2a`
        
-      Skorzystaj z kodu napisanego do tej pory. Przetestuj przy pomocy biblioteki do testów parametryzowanych.
+      Skorzystaj z kodu napisanego do tej pory. Przetestuj dla różnych przypadków.
 
-6. Chatbot - raport o błędzie 
-    * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
-    * Zweryfikuj doniesienia użytkownika.
-    * Zaproponuj rozwiązanie błędu.
-    
-7. Chatbot - rozgrzewka
+6. Chatbot - rozgrzewka
     * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
     * Uruchom `com.tdd.chat.ProdMain`
     * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
 
+7. Chatbot - raport o błędzie 
+    * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
+    * Zweryfikuj doniesienia użytkownika.
+    * Zaproponuj rozwiązanie błędu.
+    
 8. (opcjonalne) Chatbot - Shortener
     * Dodaj obsługę wiadomości `!shorten [zdanie]`. 
     * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
@@ -68,3 +68,5 @@
     * Bonus 1: Twój bot powinien wysłać `!auction I won` gdy uzna, że wygrał
     * Bonus 2: Bot wstrzymuje się od licytacji z prawdopodobieństwem 0.5
     
+13. Testy parametryzowane 
+    * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
