@@ -57,9 +57,12 @@
     * Bonus 2: Bot wstrzymuje się od licytacji z prawdopodobieństwem 0.5
     
 11. Chatbot - Mockito - weryfikacja wywołań
-    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. 
-    Z ustawy wynika, że za każdym razem gdy ktoś licytuje za kwotę 500 PLN lub więcej, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
+    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś licytuje za kwotę 500 PLN lub więcej, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
+    
+12. (opcjonalnie) Chatbot - Refactor
+    * Czy Twoje klasy nie urosły za bardzo? Przenieś niektóre funkcjonalności do nowych klas. 
+    * Dla pewności uruchamiaj testy po każdej zmianie.
     
 12. (opcjonalnie) Chatbot - Mockito - mockowanie odpowiedzi
     * Zaprojektuj przy pomocy TDD klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR.
