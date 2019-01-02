@@ -74,3 +74,48 @@
     
 13. Testy parametryzowane 
     * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
+    * Użyj kilku przykładów zdań i ich skróconych odpowiedników jako parametrów do testu.
+    * Użyj zależności mavena
+        ```
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.3.2</version>
+            <scope>test</scope>
+        </dependency>
+        ```
+        
+14. (opcjonalnie) Przetestuj metodę `indexOf(String str)` z klasy `String` biblioteki standardowej javy.
+    * Pomyśl o różnych przypadkach brzegowych
+    * Pomyśl o nieprawidłowych użyciach
+    
+15. (opcjonalnie) Przetestuj metodę `abs(Integer i)` z klasy `Math` biblioteki standardowej javy.
+    * Pomyśl o różnych przypadkach brzegowych
+    * Czy potrafisz znaleźć błąd?
+    
+16. (opcjonalnie) Zaimplementuj zasady 'gry w życie' Conwaya (Conway's Game of Life). https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+    
+    Opis z wikipedii: 
+    Gra toczy się na nieskończonej planszy podzielonej na kwadratowe komórki. Każda komórka ma ośmiu „sąsiadów”, czyli komórki przylegające do niej bokami i rogami. Każda komórka może znajdować się w jednym z dwóch stanów: może być albo „żywa” (włączona), albo „martwa” (wyłączona). Stany komórek zmieniają się w pewnych jednostkach czasu. Stan wszystkich komórek w pewnej jednostce czasu jest używany do obliczenia stanu wszystkich komórek w następnej jednostce. Po obliczeniu wszystkie komórki zmieniają swój stan dokładnie w tym samym momencie. Stan komórki zależy tylko od liczby jej żywych sąsiadów.
+    * Zacznij od implementacji (przetestowania) reguł życia komórki:
+      * Każda żywa komórka z mniej niż dwoma sąsiadami umiera w następnej turze (z samotności)
+      * Każda żywa komórka z dwoma lub trzema sąsiadami pozostaje przy życiu
+      * Każda żywa komórka z więcej niż trzema żywymi sąsiadami umiera (z przeludnienia)
+      * Każda martwa komórka z dokładnie trzema żywymi sąsiadami staje się żywa w następnej turze (reprodukcja)
+    * Dodaj zmianę stanu komórki w kolejnych turach gry
+    * Zaprojektuj planszę gry (dla uproszczenia 50x50), która będzie zarządzać komórkami 
+    * Wypisuj stan planszy na ekran
+    
+    Przykład (1 żywa komórka, plansza 2x2)
+    
+    Tura 1:
+    ```
+        ..
+        .x    
+    ```
+    Tura 2:
+    
+    ```
+        ..
+        ..    
+    ```
