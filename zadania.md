@@ -57,6 +57,7 @@
     1. Gdy na czacie zostanie napisane `motyla noga` ChatBot powinien odpisać `Nie do wiary [użytkownik]! Jak można się tak brzydko wyrażać?!`.   
     2. (Mockito - mockowanie odpowiedzi) Jeżeli `motyla noga` pojawi się 2 razy w ciągu 1 minuty. Wówczas ChatBot powinien odpisać `...` (tj. zgodnie z _pyszną radą_ udać że nic nie słyszy).
     3. (Mockito - weryfikacja wywołań) Jednocześnie o naruszeniu zasad czystości języka powinien zostać poinformowany Wujek Dobra Rada. W tym celu użyj `pl.tvp.UncleGoodAdviceApi`.
+    4. Co się stanie jeśli `UncleGoodAdviceApi` rzuci wyjątek?
     
 13. (opcjonalnie) Chatbot - Refactor
     * Czy Twoje klasy nie urosły za bardzo? Przenieś niektóre funkcjonalności do nowych klas. 
