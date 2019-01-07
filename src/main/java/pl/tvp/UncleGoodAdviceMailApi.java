@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class UncleGoodAdviceChatApi implements UncleGoodAdviceApi {
+public class UncleGoodAdviceMailApi implements UncleGoodAdviceApi {
 
-    private final Logger logger = LoggerFactory.getLogger(UncleGoodAdviceChatApi.class);
+    private final Logger logger = LoggerFactory.getLogger(UncleGoodAdviceMailApi.class);
     private final Random random = new Random();
 
     @Override
