@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 import java.util.Random;
 
-public class HttpTaxOfficeApi implements TaxOfficeApi {
+public class TaxOfficeHttpApi implements TaxOfficeApi {
 
-    private final Logger logger = LoggerFactory.getLogger(HttpTaxOfficeApi.class);
+    private final Logger logger = LoggerFactory.getLogger(TaxOfficeHttpApi.class);
     private final Random random = new Random();
 
     public void notifySuspiciousActivity(SuspiciousActivityType type, String violator, BigDecimal violationAmountPln) {

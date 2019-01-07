@@ -76,7 +76,7 @@ public class ChatConnection {
         send(new ChatMessage(messageType, chatBot.getBotName()));
     }
 
-    private void sendChat(String content) {
+    public void sendChat(String content) {
         send(new ChatMessage(content, chatBot.getBotName()));
     }
 
