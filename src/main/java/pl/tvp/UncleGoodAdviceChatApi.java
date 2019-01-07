@@ -1,17 +1,16 @@
 package pl.tvp;
 
-import com.tdd.chat.connection.ChatConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class UncleGoodAdviceChatApi implements UncleGoodAdviceApi {
 
-    private final ChatConnection chatConnection;
-
-    public UncleGoodAdviceChatApi(ChatConnection chatConnection) {
-        this.chatConnection = chatConnection;
-    }
+    private final Logger logger = LoggerFactory.getLogger(UncleGoodAdviceChatApi.class);
+    private final Random random = new Random();
 
     @Override
     public void notifyCurseWord(String curseWord, String user, long timestamp) {
@@ -19,7 +18,11 @@ public class UncleGoodAdviceChatApi implements UncleGoodAdviceApi {
                 .filter(word -> word.length() > 0)
                 .map(this::censored)
                 .collect(Collectors.joining(" "));
-        chatConnection.sendChat("Wujku, wujku! A " + user + " to powiedzial: " + censored);
+        logger.info("Wujku, wujku! A " + user + " to powiedzial: " + censored);
+        if (random.nextInt() % 2 == 0) {
+            return;
+        }
+        throw new UncleGoodAdviceApiException("Random error!");
     }
 
     private String censored(String word) {
