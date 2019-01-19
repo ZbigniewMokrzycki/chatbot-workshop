@@ -84,6 +84,7 @@
     
 15. Testy parametryzowane 
     * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
+    * Dokumentację biblioteki znajdziesz tutaj: https://junit.org/junit5/docs/5.0.3/user-guide/#writing-tests-parameterized-tests
     * Użyj kilku przykładów zdań i ich skróconych odpowiedników jako parametrów do testu.
     * Użyj zależności mavena
         ```
