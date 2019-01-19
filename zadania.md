@@ -1,4 +1,4 @@
-0. (opcjonalnie) Przetestuj metodę `abs(Integer i)` z klasy `Math` biblioteki standardowej javy.
+0. Przetestuj metodę `abs(int i)` z klasy `Calculator`.
     * Pomyśl o różnych przypadkach brzegowych
     * Czy potrafisz znaleźć błąd?
 
@@ -34,47 +34,51 @@
        
       Skorzystaj z kodu napisanego do tej pory. Przetestuj dla różnych przypadków.
 
-6. Chatbot - rozgrzewka
+6. (opcjonalnie) AssertJ: n largest
+    * Napisz klasę `NumFilter` z metodą `nlargest(List<Integer> ints, Integer n)`, która dla podanej listy liczb zwróci n największych z nich.
+    * Przetestuj rozwiązanie.
+
+7. Chatbot - rozgrzewka
     * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
     * Uruchom `com.tdd.chat.ProdMain`
     * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
 
-7. Chatbot - raport o błędzie 
+8. Chatbot - raport o błędzie 
     * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
     * Zweryfikuj doniesienia użytkownika.
     * Zaproponuj rozwiązanie błędu.
     
-8. Chatbot - Shortener
+9. Chatbot - Shortener
     * Dodaj obsługę wiadomości `!shorten [zdanie]`. 
     * Otrzymawszy taką wiadomość, bot odpowiada skróconym zdaniem.
     * Np. na wiadomość: `!shorten Ala ma kota` odpowie: `Ala ma k2a`
     
-9. Chatbot - gaduła (TDD ping-pong)
+10. Chatbot - gaduła (TDD ping-pong)
     * Dodaj do ChatBota metodę, która zwróci imię największej gaduły na czacie (użytkownika, który wysłał najwięcej wiadomości).
     * Zaprojektuj rozwiązanie za pomocą TDD.
     
-10. Chatbot - moderator (TDD / Mockito)
+11. Chatbot - moderator (TDD / Mockito)
     1. Gdy na czacie zostanie napisane `motyla noga` ChatBot powinien odpisać `Nie do wiary [użytkownik]! Jak można się tak brzydko wyrażać?!`.   
     2. (Mockito - mockowanie odpowiedzi) Jeżeli `motyla noga` pojawi się 2 razy w ciągu 1 minuty. Wówczas ChatBot powinien odpisać `...` (tj. zgodnie z _pyszną radą_ udać że nic nie słyszy).
     3. (Mockito - weryfikacja wywołań) Jednocześnie o naruszeniu zasad czystości języka powinien zostać poinformowany Wujek Dobra Rada. W tym celu użyj `pl.tvp.UncleGoodAdviceApi`.
     4. Co się stanie jeśli `UncleGoodAdviceApi` rzuci wyjątek?
     
-13. (opcjonalnie) Chatbot - Refactor
+12. (opcjonalnie) Chatbot - Refactor
     * Czy Twoje klasy nie urosły za bardzo? Przenieś niektóre funkcjonalności do nowych klas. 
     * Dla pewności uruchamiaj testy po każdej zmianie.
     
-11. (opcjonalnie) Chatbot - aukcja (Mockito - mockowanie odpowiedzi)
+13. (opcjonalnie) Chatbot - aukcja (Mockito - mockowanie odpowiedzi)
     * Na komendę `!auction start [przedmiot]` Chatbot powinien wylosować cenę z przedziału 0-1000zł. 
     * Następnie Chatbot licytuje przedmiot odpowiadając `!auction bid [cena]`
     * Aukcja kończy się gdy zostanie odebrany komunikat `!auction stop`
     * Bonus 1: Twój bot powinien wysłać `!auction I won` gdy uzna, że wygrał
     * Bonus 2: Bot wstrzymuje się od licytacji z prawdopodobieństwem 0.5
     
-12. (opcjonalnie) Chatbot - aukcja (Mockito weryfikacja wywołań)
+14. (opcjonalnie) Chatbot - aukcja (Mockito weryfikacja wywołań)
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś licytuje za kwotę 500 PLN lub więcej, Twój ChatBot musi powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
     
-14. (opcjonalnie) Chatbot - Mockito - mockowanie odpowiedzi
+15. (opcjonalnie) Chatbot - Mockito - mockowanie odpowiedzi
     * Zaprojektuj przy pomocy TDD klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR.
     * Skorzystaj z klasy `CurrencyRates`, która dostarczy Ci kursu wymiany waluty. 
     * Jakie problemy widzisz? Jak ich uniknąć?
@@ -82,7 +86,7 @@
     * Dodaj obsługę wiadomości `!toEUR 10` do ChatBota.
     * Pamiętaj o ustawie (zadanie 11)!
     
-15. Testy parametryzowane 
+16. Testy parametryzowane 
     * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
     * Dokumentację biblioteki znajdziesz tutaj: https://junit.org/junit5/docs/5.0.3/user-guide/#writing-tests-parameterized-tests
     * Użyj kilku przykładów zdań i ich skróconych odpowiedników jako parametrów do testu.
@@ -96,18 +100,18 @@
         </dependency>
         ```
         
-16. (opcjonalnie) Przetestuj metodę `indexOf(String str)` z klasy `String` biblioteki standardowej javy.
+17. (opcjonalnie) Przetestuj metodę `indexOf(String str)` z klasy `String` biblioteki standardowej javy.
     * Pomyśl o różnych przypadkach brzegowych
     * Pomyśl o nieprawidłowych użyciach
     
-17. (opcjonalnie) Przetestuj metodę `replace(String s1, String s2)` z klasy `String` biblioteki standardowej javy.
+18. (opcjonalnie) Przetestuj metodę `replace(String s1, String s2)` z klasy `String` biblioteki standardowej javy.
     * Pomyśl o różnych przypadkach brzegowych
     
-18. (opcjonalnie) Czy można dodać `null` jako element do listy w javie? 
+19. (opcjonalnie) Czy można dodać `null` jako element do listy w javie? 
     * Co według Ciebie powinno się stać? 
     * Sprawdź za pomocą testu jaką decyzję podjęli autorzy javy. 
     
-19. (opcjonalnie) Napisz program 'FizzBuzz' (https://en.wikipedia.org/wiki/Fizz_buzz).
+20. (opcjonalnie) Napisz program 'FizzBuzz' (https://en.wikipedia.org/wiki/Fizz_buzz).
     * Program przyjmuje jeden parametr `n` - liczbę iteracji programu 
     * W każdej iteracji program wypisuje kolejne liczby całkowite, od 1 do n
     * Dla liczb podzielnych przez 3 - zamiast liczby wypisuje `Fizz`
@@ -117,7 +121,7 @@
     * Przykładowe wyjście programu dla n = 23:
     `1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, Fizz Buzz, 16, 17, Fizz, 19, Buzz, Fizz, 22, 23`
     
-20. (opcjonalnie) Zaimplementuj podstawowe zasady 'gry w życie' Conwaya (Conway's Game of Life). https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+21. (opcjonalnie) Zaimplementuj podstawowe zasady 'gry w życie' Conwaya (Conway's Game of Life). https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
     
     Opis z wikipedii: 
     Gra toczy się na nieskończonej planszy podzielonej na kwadratowe komórki. Każda komórka ma ośmiu „sąsiadów”, czyli komórki przylegające do niej bokami i rogami. Każda komórka może znajdować się w jednym z dwóch stanów: może być albo „żywa” (włączona), albo „martwa” (wyłączona). Stany komórek zmieniają się w pewnych jednostkach czasu. Stan wszystkich komórek w pewnej jednostce czasu jest używany do obliczenia stanu wszystkich komórek w następnej jednostce. Po obliczeniu wszystkie komórki zmieniają swój stan dokładnie w tym samym momencie. Stan komórki zależy tylko od liczby jej żywych sąsiadów.
@@ -128,7 +132,7 @@
       * Każda żywa komórka z więcej niż trzema żywymi sąsiadami umiera (z przeludnienia)
       * Każda martwa komórka z dokładnie trzema żywymi sąsiadami staje się żywa w następnej turze (reprodukcja)
     
-21. (opcjonalnie) Zaimplementuj resztę 'gry w życie' z poprzedniego zadania
+22. (opcjonalnie) Zaimplementuj resztę 'gry w życie' z poprzedniego zadania
     * Dodaj zmianę stanu komórki w kolejnych turach gry
     * Zaprojektuj planszę gry (dla uproszczenia 50x50), która będzie zarządzać komórkami 
     * Wypisuj stan planszy na ekran
