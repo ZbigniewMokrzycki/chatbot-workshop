@@ -15,7 +15,7 @@ public class DevMain {
             if (i > 0) {
                 String name = line.substring(0, i);
                 String msg = line.substring(i + 2);
-                String botMessage = chatBot.onUserMessage(new ChatMessage(msg, name));
+                String botMessage = chatBot.replyUserMessage(name, msg);
                 if (!botMessage.equals("")) {
                     System.out.printf("%s: %s%n", chatBot.getBotName(), botMessage);
                 }

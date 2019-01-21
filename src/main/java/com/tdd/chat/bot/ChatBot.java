@@ -1,13 +1,11 @@
 package com.tdd.chat.bot;
 
-import com.tdd.chat.ChatMessage;
-
 public class ChatBot {
 
     private final String botName = "ChatBot";
 
-    public String onUserMessage(ChatMessage message) {
-        if (message.getContent().contains("hi")) {
+    public String replyUserMessage(String user, String message) {
+        if (message.equals("hi")) {
             return "Hello!";
         }
         return "";

@@ -47,15 +47,18 @@
     * Napisz klasę `NumFilter` z metodą `nlargest(List<Integer> ints, Integer n)`, która dla podanej listy liczb zwróci n największych z nich.
     * Przetestuj rozwiązanie.
 
-8. Chatbot - rozgrzewka
+8. Chatbot - debugowanie kodu na produkcji
+    * Upewnij się czy prowadzący uruchomił Chatbota
+    * Nasz Chatbot jest bardzo prosty. Jednyne co potrafi to odpowiedzieć `Hello!` w momencie gdy ktoś napisze `hi`.
+    * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ 
+    * Zweryfikuj czy Chatbot faktycznie działa tak jak powinien.
+    * Czy potrafisz wskazać błąd w kodzie? Spróbuj go naprawić.
+    * Spróbuj przetestować poprawiony kod.
+
+9. Chatbot - rozgrzewka
     * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
     * Uruchom `com.tdd.chat.ProdMain`
     * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
-
-9. Chatbot - raport o błędzie 
-    * Użytkownik zgłasza, że Twój ChatBot ma błąd. Coś dziwnego stało się gdy ktoś napisał `I like history!`. 
-    * Zweryfikuj doniesienia użytkownika.
-    * Zaproponuj rozwiązanie błędu.
     
 10. Chatbot - Shortener
     * Dodaj obsługę wiadomości `!shorten [zdanie]`. 

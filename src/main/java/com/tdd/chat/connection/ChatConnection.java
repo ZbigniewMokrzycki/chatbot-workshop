@@ -56,7 +56,7 @@ public class ChatConnection {
                 ChatMessage msg = (ChatMessage) payload;
                 if (ChatMessage.MessageType.CHAT.equals(msg.getType())) {
                     LOGGER.info("==> " + msg);
-                    String reply = chatBot.onUserMessage(msg);
+                    String reply = chatBot.replyUserMessage(msg.getSender(), msg.getContent());
                     if (reply != null && !reply.equals("")) {
                         sendChat(reply);
                     }
