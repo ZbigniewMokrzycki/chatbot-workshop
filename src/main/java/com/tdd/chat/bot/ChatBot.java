@@ -5,7 +5,7 @@ public class ChatBot {
     private final String botName = "ChatBot";
 
     public String replyUserMessage(String user, String message) {
-        if (message.equals("hi")) {
+        if (message.contains("hi")) {
             return "Hello!";
         }
         return "";
