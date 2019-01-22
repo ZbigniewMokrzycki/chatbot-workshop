@@ -54,7 +54,7 @@
     * Czy potrafisz wskazać błąd w kodzie? Spróbuj go naprawić.
     * Spróbuj przetestować poprawiony kod.
     
-11. TDD - Rok przestępny
+9. TDD - Rok przestępny
     * Za pomocą techniki TDD!
     * Zaprojektuj metodę która stwierdzi czy podany rok jest rokiem przestępnym.
     * Lata podzielne przez 400 - SĄ przestępne (np. 2000 był rokiem przestępnym),
@@ -62,7 +62,7 @@
     * Lata podzielne przez 4 ale nie przez 100 - SĄ przestępne (np. 2008, 2012, 2016),
     * Lata nie podzielne przez 4 - NIE są przestępne (np. 2017, 2018, 2019).    
     
-12. TDD - Historia wizyt
+10. TDD - Historia wizyt
     * Za pomocą techniki TDD!
     * Napisz klasę `VisitHistory` do śledzenia historii odwiedzin u Twoich znajomych: 
       `void insert(String item) {}` - do dodawania odwiedzin
@@ -74,12 +74,12 @@
     * (opcjonalnie) ogranicz wielkość listy do `n` (najstarsze elementy są usuwane przy osiągnięciu maksymalnego rozmiaru listy)
     * Np: po dodatniu kolejno: "Ala", "Tomek", "Wojtek", "Wojtek", "Tomek", lista ma zwrócić `[ "Tomek", "Wojtek", "Ala" ]`
      
-13. TDD - Rozkład liczby na czynniki pierwsze
+11. TDD - Rozkład liczby na czynniki pierwsze
     * Za pomocą techniki TDD!
     * Napisz metodę, która rozłoży podaną liczbę `n` na listę jej czynników pierwszych. 
     * http://matematyka.pisz.pl/strona/1349.html
     
-14. Mockito (mockowanie odpowiedzi) - Lottery
+12. Mockito (mockowanie odpowiedzi) - Lottery
     * Zaprojektuj klasę `Lottery`, która pozwala wyciągnąć los.
     * Los zwykle jest pusty
     * 1 na 1000 losów jest wygrany
@@ -87,7 +87,7 @@
     * 10% spośród wygranych losów wygrywa samochód
     * Przetestuj czy zasady loterii zostały poprawnie zakodowane.
     
-15. Mockito (weryfikacja wywołań) - Lottery
+13. Mockito (weryfikacja wywołań) - Lottery
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś wygra na loterii, musisz powiadomić API Urzędu Skarbowego.
     * Zmień klasę `Lottery` tak aby była zgodna z ustawą. Użyj klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
     * W przypadku nagrody pocieszenia, powiadom API o podejrzeniu unikania podatku od wygranej.
@@ -95,17 +95,17 @@
     * (opcjonalnie) Nowelizacja ustawy przewiduje jedynie kontrolę wyrywkową. Powiadamiaj API co drugi przypadek wygranej.
     * (opcjonalnie) Odtwórz fanfary dla głównej wygranej (przetestuj!)
     
-16. Mockito (mockowanie odpowiedzi) - CurrencyConverter
+14. Mockito (mockowanie odpowiedzi) - CurrencyConverter
     * Zaprojektuj (najchętniej przy pomocy TDD) klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR, np. `100 PLN -> ~25 EUR`
     * Skorzystaj z klasy `com.tdd.currency.CurrencyRates`, która dostarczy Ci kursu wymiany waluty: Dostępna tam metoda `getEurPlnRate()` zwraca ok 4zł w zależności od kursu dnia.
     * Jakie problemy widzisz? Jak ich uniknąć?
     * Pomyśl o wyjątkach
 
-17. Mockito (weryfikacja wywołań) - CurrencyConverter
+15. Mockito (weryfikacja wywołań) - CurrencyConverter
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę 500 PLN lub więcej, musisz powiadomić API Urzędu Skarbowego.
     * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
     
-18. Testy parametryzowane 
+16. Testy parametryzowane 
     * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
     * Dokumentację biblioteki znajdziesz tutaj: https://junit.org/junit5/docs/5.0.3/user-guide/#writing-tests-parameterized-tests
     * Użyj kilku przykładów zdań i ich skróconych odpowiedników jako parametrów do testu.
@@ -171,7 +171,6 @@ Zadania domowe:
         ..
         ..    
     ```
-    
     
 Zadania na Chatbota:  
 
