@@ -93,6 +93,7 @@
     * W przypadku nagrody pocieszenia, powiadom API o podejrzeniu unikania podatku od wygranej.
     * W przypadku głównej wygranej, powiadom API o dużej sumie pieniędzy.
     * (opcjonalnie) Nowelizacja ustawy przewiduje jedynie kontrolę wyrywkową. Powiadamiaj API co drugi przypadek wygranej.
+    * (opcjonalnie) Odtwórz fanfary dla głównej wygranej (przetestuj!)
     
 16. Mockito (mockowanie odpowiedzi) - CurrencyConverter
     * Zaprojektuj (najchętniej przy pomocy TDD) klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR, np. `100 PLN -> ~25 EUR`

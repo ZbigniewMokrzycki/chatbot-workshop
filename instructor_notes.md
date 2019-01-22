@@ -95,7 +95,23 @@ Basic: plus, minus
 Exceptions: div by 0
 Coverage: abs
 Matchers: intBetween(a, b)
-Mock: isFriday
-Mock:  show eq(), any()
+Mock - when: isWeekend
 
+```
+    private Clock clock = Clock.systemDefaultZone();
+  
+    boolean isWeekend() {
+        LocalDateTime dateTime = LocalDateTime.now(clock);
+        DayOfWeek dayOfWeek = dateTime.getDayOfWeek();
+        if (dayOfWeek.equals(DayOfWeek.SATURDAY) || dayOfWeek.equals(DayOfWeek.SUNDAY)) {
+            return true;
+        }
+        return false;
+    }
+```
 
+Mock - verify: playSound on weekend
+show eq(), any() 
+```
+   new AudioPlayer();
+```
