@@ -96,5 +96,6 @@ Exceptions: div by 0
 Coverage: abs
 Matchers: intBetween(a, b)
 Mock: isFriday
+Mock:  show eq(), any()
 
 
