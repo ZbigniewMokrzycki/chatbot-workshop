@@ -95,7 +95,7 @@ Basic: plus, minus
 Exceptions: div by 0
 Coverage: abs
 Matchers: intBetween(a, b)
-Mock - when: isWeekend
+Mock - when: isWeekend (http://isitweekendyet.com/)
 
 ```
     private Clock clock = Clock.systemDefaultZone();
