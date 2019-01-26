@@ -89,7 +89,7 @@
     
 13. Mockito (weryfikacja wywołań) - Lottery
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś wygra na loterii, musisz powiadomić API Urzędu Skarbowego.
-    * Zmień klasę `Lottery` tak aby była zgodna z ustawą. Użyj klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
+    * Zmień klasę `Lottery` tak aby była zgodna z ustawą. Użyj klasy `TaxOffice` dostarczonej przez ustawodawcę.
     * W przypadku nagrody pocieszenia, powiadom API o podejrzeniu unikania podatku od wygranej.
     * W przypadku głównej wygranej, powiadom API o dużej sumie pieniędzy.
     * (opcjonalnie) Nowelizacja ustawy przewiduje jedynie kontrolę wyrywkową. Powiadamiaj API co drugi przypadek wygranej.
@@ -103,7 +103,7 @@
 
 15. Mockito (weryfikacja wywołań) - CurrencyConverter
     * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę 500 PLN lub więcej, musisz powiadomić API Urzędu Skarbowego.
-    * Wprowadź zmianę używając klasy `HttpTaxOfficeApi` dostarczonej przez ustawodawcę.
+    * Wprowadź zmianę używając klasy `TaxOffice` dostarczonej przez ustawodawcę.
     
 16. Testy parametryzowane 
     * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.

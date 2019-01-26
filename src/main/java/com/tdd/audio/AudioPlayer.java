@@ -7,13 +7,14 @@ import java.util.concurrent.CountDownLatch;
 
 public class AudioPlayer {
 
-    public static final InputStream FANFARE = AudioPlayer.class.getClass().getResourceAsStream("/fanfare.wav");
-    public static final InputStream CAT = AudioPlayer.class.getClass().getResourceAsStream("/cat.wav");
+    public static final String FANFARE = "/fanfare.wav";
+    public static final String CAT = "/cat.wav";
 
-    public void play(InputStream soundFile) {
+    public void play(String soundFile) {
+        InputStream soundStream = getClass().getResourceAsStream(soundFile);
         CountDownLatch countDownLatch = new CountDownLatch(1);
         try {
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundStream);
             Clip clip = AudioSystem.getClip();
             clip.open(audioIn);
             clip.start();
