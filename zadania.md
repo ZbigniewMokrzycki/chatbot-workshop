@@ -215,3 +215,4 @@ Zadania na Chatbota:
     
 5. Chatbot - przelicznik walut
     * Dodaj obsługę wiadomości `!toEUR 10` do ChatBota.
+    
