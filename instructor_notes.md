@@ -1,9 +1,34 @@
-Junit dependency
+Maven dependencies
 ```
+<!-- junit -->
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-engine</artifactId>
     <version>5.3.1</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- assertj -->
+<dependency>
+    <groupId>org.assertj</groupId>
+    <artifactId>assertj-core</artifactId>
+    <version>3.11.1</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- JUnit @ParameterizedTest -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>5.3.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- mockito -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>2.23.4</version>
     <scope>test</scope>
 </dependency>
 
@@ -17,38 +42,8 @@ Surfire plugin - required if running from maven!
 </plugin>
 
 ```
-
 `./mvnw clean compile test`
 
-
-AssertJ
-```
-<dependency>
-    <groupId>org.assertj</groupId>
-    <artifactId>assertj-core</artifactId>
-    <version>3.11.1</version>
-    <scope>test</scope>
-</dependency>
-```
-
-JUnit @ParameterizedTest
-```
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-params</artifactId>
-    <version>5.3.2</version>
-    <scope>test</scope>
-</dependency>
-```
-
-```
-<dependency>
-    <groupId>org.mockito</groupId>
-    <artifactId>mockito-core</artifactId>
-    <version>2.23.4</version>
-    <scope>test</scope>
-</dependency>
-```
                                             
 1. Exceptions 
     * `@Test(expected = IllegalArgumentException.class)`
@@ -78,7 +73,6 @@ JUnit @ParameterizedTest
 3. Parametrized
     * opowiedzieć, że są różne biblioteki eg. JUnitParams
 
-
 4. Chatbot
 Running 
 `./mvnw exec:java`
@@ -90,28 +84,15 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 ```
 
 Demo stuff on Calculator example.
-
 Basic: plus, minus
 Exceptions: div by 0
 Coverage: abs
-Matchers: intBetween(a, b)
-Mock - when: isWeekend (http://isitweekendyet.com/)
-
-```
-    private Clock clock = Clock.systemDefaultZone();
-  
-    boolean isWeekend() {
-        LocalDateTime dateTime = LocalDateTime.now(clock);
-        DayOfWeek dayOfWeek = dateTime.getDayOfWeek();
-        if (dayOfWeek.equals(DayOfWeek.SATURDAY) || dayOfWeek.equals(DayOfWeek.SUNDAY)) {
-            return true;
-        }
-        return false;
-    }
-```
-
-Mock - verify: playSound on weekend
+Matchers: calculator.add(), przykłady na sortowanie listy, uppercase na stringu
+TDD - fizzbuzz 
+Mock - when: isWeekend (http://isitweekendyet.com/) - use `Today` class
+Mock - verify: playSound on weekend `AudioPlayer` class
 show eq(), any() 
 ```
    new AudioPlayer();
 ```
+Parametrized - calculator.add, string.toUpperCase
