@@ -80,20 +80,24 @@
     * http://matematyka.pisz.pl/strona/1349.html
     
 12. Mockito (mockowanie odpowiedzi) - Lottery
-    * Zaprojektuj klasę `Lottery`, która pozwala wyciągnąć los.
+    * Zaprojektuj klasę `Lottery`, z metodą `String getPrize() {}` która pozwala wyciągnąć los.
     * Los zwykle jest pusty
-    * 1 na 1000 losów jest wygrany
-    * 90% spośród wygranych losów wygrywa telewizor
-    * 10% spośród wygranych losów wygrywa samochód
-    * Przetestuj czy zasady loterii zostały poprawnie zakodowane.
+    * 1 na 1000 losów wygrywa telewizor
+    * Przetestuj przy pomocy mockito
+    * (opcjonalnie) Dodatkowo możesz dodać następujące zasady:
+      * 90% spośród wygranych losów wygrywa telewizor
+      * 10% spośród wygranych losów wygrywa samochód
+      * Przetestuj czy zasady loterii zostały poprawnie zakodowane.
     
 13. Mockito (weryfikacja wywołań) - Lottery
-    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś wygra na loterii, musisz powiadomić API Urzędu Skarbowego.
+    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś wygra na loterii, musisz powiadomić Urząd Skarbowy.
     * Zmień klasę `Lottery` tak aby była zgodna z ustawą. Użyj klasy `TaxOffice` dostarczonej przez ustawodawcę.
-    * W przypadku nagrody pocieszenia, powiadom API o podejrzeniu unikania podatku od wygranej.
-    * W przypadku głównej wygranej, powiadom API o dużej sumie pieniędzy.
-    * (opcjonalnie) Nowelizacja ustawy przewiduje jedynie kontrolę wyrywkową. Powiadamiaj API co drugi przypadek wygranej.
-    * (opcjonalnie) Odtwórz fanfary dla głównej wygranej (przetestuj!)
+    * W przypadku wygranej powiadom o tym urząd, wywołując `notifyPrizeWon()` z klasy `TaxOffice`
+    * Przetestuj
+    * (opcjonalnie) Dodatkowo możesz dodać nasępujące reguły:
+      * W przypadku głównej wygranej oprócz informacji o nagrodzie, dodatkowo powiadom urząd o transakcji na dużą kwotę przy pomocy metody `notifyLargeTransaction()` z klasy `TaxOffice` (przetestuj!)
+      * Nowelizacja ustawy przewiduje jedynie kontrolę wyrywkową. Powiadamiaj API co drugi przypadek wygranej. (przetestuj!)
+      * Odtwórz fanfary dla głównej wygranej (przetestuj!)
     
 14. Mockito (mockowanie odpowiedzi) - CurrencyConverter
     * Zaprojektuj (najchętniej przy pomocy TDD) klasę `CurrencyConverter`, z metodą umożliwiającą zamianę kwoty w PLN na EUR, np. `100 PLN -> ~25 EUR`
@@ -102,13 +106,13 @@
     * Pomyśl o wyjątkach
 
 15. Mockito (weryfikacja wywołań) - CurrencyConverter
-    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę 500 PLN lub więcej, musisz powiadomić API Urzędu Skarbowego.
+    * Rząd uchwalił ustawę o przeciwdziałaniu przestępstwom finansowym. Z ustawy wynika, że za każdym razem gdy ktoś przelicza kwotę 500 PLN lub więcej, musisz powiadomić Urzęd Skarbowy.
     * Wprowadź zmianę używając klasy `TaxOffice` dostarczonej przez ustawodawcę.
     
 16. Testy parametryzowane 
-    * Przetestuj klasę `SentenceShortener` (z zadania 5) przy pomocy biblioteki do testów parametryzowanych.
+    * Przetestuj klasę `WordShortener` (z zadania 1) przy pomocy biblioteki do testów parametryzowanych.
     * Dokumentację biblioteki znajdziesz tutaj: https://junit.org/junit5/docs/5.0.3/user-guide/#writing-tests-parameterized-tests
-    * Użyj kilku przykładów zdań i ich skróconych odpowiedników jako parametrów do testu.
+    * Użyj kilku przykładów słów i ich skróconych odpowiedników jako parametrów do testu.
     * Użyj zależności mavena
         ```
         <dependency>
