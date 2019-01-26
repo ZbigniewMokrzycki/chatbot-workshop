@@ -66,7 +66,7 @@
     * Czy potrafisz wskazać błąd w kodzie? Spróbuj go naprawić.
     * Spróbuj przetestować poprawiony kod.
     
-10. TDD - Rok przestępny
+10. TDD - Rok przestępny (ang. Leap Year)
     * Za pomocą techniki TDD!
     * Zaprojektuj metodę która stwierdzi czy podany rok jest rokiem przestępnym.
     * Lata podzielne przez 400 - SĄ przestępne (np. 2000 był rokiem przestępnym),

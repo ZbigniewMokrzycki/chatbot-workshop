@@ -6,6 +6,10 @@ public class Calculator {
         return a + b;
     }
 
+    public int div(int a, int b) {
+        return a / b;
+    }
+
     public int abs(int a) {
         if (a >= 0) {
             return a;
