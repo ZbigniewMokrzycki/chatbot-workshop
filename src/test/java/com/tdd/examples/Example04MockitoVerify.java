@@ -1,7 +1,5 @@
 package com.tdd.examples;
 
-/*
-
 import com.tdd.audio.AudioPlayer;
 import com.tdd.time.Today;
 import org.junit.jupiter.api.Test;
@@ -68,5 +66,3 @@ public class Example04MockitoVerify {
         verifyZeroInteractions(audioPlayer);
     }
 }
-
-*/

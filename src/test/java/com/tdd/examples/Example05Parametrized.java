@@ -1,7 +1,5 @@
 package com.tdd.examples;
 
-/*
-
 import com.tdd.calculator.Calculator;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -48,5 +46,3 @@ public class Example05Parametrized {
         );
     }
 }
-
-*/

@@ -1,7 +1,5 @@
 package com.tdd.examples;
 
-/*
-
 import com.tdd.time.Today;
 import org.junit.jupiter.api.Test;
 
@@ -56,5 +54,3 @@ public class Example03MockitoWhen {
         assertThat(isWeekend).isTrue();
     }
 }
-
-*/
