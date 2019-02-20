@@ -36,7 +36,7 @@
     * Metoda ta dla podanej listy słów skróci je wszystkie po czym zwróci je w liście
     * Np: ``` ["java", "internationalization"] -> ["j2a", "i18n"] ```
     * Przetestuj przy pomocy AssertJ
-    * Testy zacznij od najprosztszego możliwego przypadku
+    * Testy zacznij od najprostszego możliwego przypadku
     * (opcjonalnie) Dodatkowo możesz:
       * Jeżeli na liście pojawią się słowa, które nie mogą zostać skrócone wtedy upewnij się, że zostaną zwrócone w swojej niezmienionej formie (przetestuj!)
   
@@ -60,7 +60,7 @@
 
 9. Prod Debug - Chatbot
     * Upewnij się czy prowadzący uruchomił Chatbota
-    * Nasz Chatbot jest bardzo prosty. Jednyne co potrafi to odpowiedzieć `Hello!` w momencie gdy ktoś napisze `hi`.
+    * Specyfikacja naszego Chatbota jest następująca: Gdy dowolny użytkownik czatu napisze `hi` wtedy Chatbot powinien odpowiedzieć mu `Hello!`.
     * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ 
     * Zweryfikuj czy Chatbot faktycznie działa tak jak powinien.
     * Czy potrafisz wskazać błąd w kodzie? Spróbuj go naprawić.
@@ -76,9 +76,9 @@
     
 11. (opcjonalnie) TDD - Historia wizyt
     * Za pomocą techniki TDD!
-    * Napisz klasę `VisitHistory` do śledzenia historii odwiedzin u Twoich znajomych: 
-      `void insert(String item) {}` - do dodawania odwiedzin
-      `List<String> getHistory() {}` - do sprawdzania obecnej zawartości historii
+    * Napisz klasę `VisitHistory` do śledzenia historii odwiedzin u Twoich znajomych. Z następującymi metodami: 
+        * `void insert(String item) {}` - do dodawania odwiedzin
+        * `List<String> getHistory() {}` - do sprawdzania obecnej zawartości historii
     * Początkowo lista jest pusta
     * Ostatnio dodany element jest na liście jako pierwszy, a najwcześniej dodany jako ostatni
     * Elementy na liście są unikalne (występują tylko raz), dodatnie duplikatu skutkuje przesunięciem elementu na początek listy

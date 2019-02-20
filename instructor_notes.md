@@ -83,16 +83,17 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 ./mvnw spring-boot:run
 ```
 
+5. Demo ideas
 Demo stuff on Calculator example.
-Basic: plus, minus
-Exceptions: div by 0
-Coverage: abs
-Matchers: calculator.add(), przykłady na sortowanie listy, uppercase na stringu
-TDD - fizzbuzz 
-Mock - when: isWeekend (http://isitweekendyet.com/) - use `Today` class
-Mock - verify: playSound on weekend `AudioPlayer` class
+* Basic: plus, minus
+* Exceptions: div by 0
+* Coverage: abs
+* Matchers: calculator.add(), przykłady na sortowanie listy, uppercase na stringu
+* TDD - fizzbuzz 
+* Mock - when: isWeekend (http://isitweekendyet.com/) - use `Today` class
+* Mock - verify: playSound on weekend `AudioPlayer` class
 show eq(), any() 
 ```
    new AudioPlayer();
 ```
-Parametrized - calculator.add, string.toUpperCase
+* Parametrized - calculator.add, string.toUpperCase
