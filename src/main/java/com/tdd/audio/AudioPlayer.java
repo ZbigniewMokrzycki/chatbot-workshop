@@ -15,7 +15,9 @@ public class AudioPlayer {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         try {
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundStream);
-            Clip clip = AudioSystem.getClip();
+//            Clip clip = AudioSystem.getClip();
+            DataLine.Info info = new DataLine.Info(Clip.class, audioIn.getFormat());
+            Clip clip = (Clip) AudioSystem.getLine(info);
             clip.open(audioIn);
             clip.start();
             clip.addLineListener(event -> {
@@ -27,5 +29,9 @@ public class AudioPlayer {
         } catch (InterruptedException | UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void main(String[] args) {
+        new AudioPlayer().play(CAT);
     }
 }
