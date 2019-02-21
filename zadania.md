@@ -192,7 +192,7 @@ Zadania domowe:
 Zadania na Chatbota:  
 
 1. Chatbot - rozgrzewka
-    * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]Bot`, np. `AdamBot`.
+    * Napisz test do metody `getBotName()` w klasie `ChatBot`. Upewnij się, że zwracana nazwa to `[TwojeImię]_bot`, np. `Adam_bot`.
     * Uruchom `com.tdd.chat.ProdMain`
     * Wejdź na stronę https://spring-ws-chat.herokuapp.com/ i sprawdź czy nazwa Twojego ChatBota faktycznie uległa zmianie.
     
