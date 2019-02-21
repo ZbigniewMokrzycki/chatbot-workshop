@@ -30,8 +30,4 @@ public class AudioPlayer {
             throw new RuntimeException(e);
         }
     }
-
-    public static void main(String[] args) {
-        new AudioPlayer().play(CAT);
-    }
 }
