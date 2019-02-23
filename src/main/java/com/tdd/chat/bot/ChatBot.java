@@ -3,7 +3,7 @@ package com.tdd.chat.bot;
 public class ChatBot {
 
     public String replyUserMessage(String user, String message) {
-        if (message.contains("hi")) {
+        if (message.equals("hi")) {
             return "Hello!";
         }
         return "";
